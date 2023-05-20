@@ -11484,7 +11484,7 @@ void main() {
     "weight": 69
   };
 
-  final mockParam = PokemonUrlEntity(urlPokemon: '');
+  final mockParam = PokemonUrlEntity(urlPokemon: '', name: '');
   test('get pokemon data datasource ...', () async {
     when(() => http.get(
               any(),

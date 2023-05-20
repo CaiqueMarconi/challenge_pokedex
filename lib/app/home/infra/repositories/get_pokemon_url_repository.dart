@@ -4,15 +4,18 @@ import 'package:challenge_pokedex/app/home/domain/repositories/i_get_pokemon_url
 import 'package:challenge_pokedex/app/home/infra/datasources/i_get_pokemon_url_datasource.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../domain/helpers/params/get_pokemon_url_param.dart';
+
 class GetPokemonUrlRepository implements IGetPokemonUrlRepository {
   final IGetPokemonUrlDatasource _datasource;
 
   GetPokemonUrlRepository(this._datasource);
 
   @override
-  Future<Either<IAppException, List<PokemonUrlEntity>>> call() async {
+  Future<Either<IAppException, List<PokemonUrlEntity>>> call(
+      GetPokemonUrlParam param) async {
     try {
-      final result = await _datasource.call();
+      final result = await _datasource.call(param);
       return Right(result);
     } on IAppException catch (e) {
       return Left(e);

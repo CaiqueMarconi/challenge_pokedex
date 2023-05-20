@@ -14,7 +14,7 @@ void main() {
   final datasource = MockDatasource();
   final repository = GetPokemonDataRepository(datasource);
 
-  final mockParam = PokemonUrlEntity(urlPokemon: '');
+  final mockParam = PokemonUrlEntity(urlPokemon: '', name: '');
   test('get pokemon data repository ...', () async {
     when(() => datasource.call(mockParam))
         .thenAnswer((invocation) async => pokemonDataEntityMock);

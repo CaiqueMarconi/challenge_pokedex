@@ -1,4 +1,5 @@
 import 'package:challenge_pokedex/app/home/domain/entities/pokemon_url_entity.dart';
+import 'package:challenge_pokedex/app/home/domain/helpers/params/get_pokemon_url_param.dart';
 import 'package:challenge_pokedex/app/home/domain/repositories/i_get_pokemon_url_repository.dart';
 import 'package:challenge_pokedex/app/home/domain/usecases/get_pokemon_usecase/get_pokemon_url_usecase.dart';
 import 'package:dartz/dartz.dart';
@@ -11,9 +12,9 @@ void main() {
   final repository = RepositoryMock();
   final usecase = GetPokemonUrlUsecase(repository);
   test('get pokemon url usecase ...', () async {
-    when(() => repository.call())
+    when(() => repository.call(GetPokemonUrlParam('')))
         .thenAnswer((invocation) async => const Right([]));
-    final result = await usecase.call();
+    final result = await usecase.call(GetPokemonUrlParam(''));
     expect(result.fold((l) => l, (r) => r), isA<List<PokemonUrlEntity>>());
   });
 }

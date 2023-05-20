@@ -4,13 +4,16 @@ import 'package:challenge_pokedex/app/home/domain/repositories/i_get_pokemon_url
 import 'package:challenge_pokedex/app/home/domain/usecases/get_pokemon_usecase/i_get_pokemon_url_usecase.dart';
 import 'package:dartz/dartz.dart';
 
+import '../../helpers/params/get_pokemon_url_param.dart';
+
 class GetPokemonUrlUsecase implements IGetPokemonUrlUsecase {
   final IGetPokemonUrlRepository _repository;
 
   const GetPokemonUrlUsecase(this._repository);
   @override
-  Future<Either<IAppException, List<PokemonUrlEntity>>> call() async {
-    final result = await _repository.call();
+  Future<Either<IAppException, List<PokemonUrlEntity>>> call(
+      GetPokemonUrlParam param) async {
+    final result = await _repository.call(param);
     return result;
   }
 }

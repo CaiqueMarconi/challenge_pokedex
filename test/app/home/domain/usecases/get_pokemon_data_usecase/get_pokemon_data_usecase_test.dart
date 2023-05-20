@@ -14,7 +14,7 @@ void main() {
   final repository = RepositoryMock();
   final usecase = GetPokemonDataUsecase(repository);
 
-  final mockParam = PokemonUrlEntity(urlPokemon: '');
+  final mockParam = PokemonUrlEntity(urlPokemon: '', name: '');
   test('get pokemon data usecase ...', () async {
     when(() => repository.call(mockParam))
         .thenAnswer((invocation) async => Right(pokemonDataEntityMock));
