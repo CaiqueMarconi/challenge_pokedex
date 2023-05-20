@@ -5,32 +5,32 @@ import 'package:challenge_pokedex/app/home/domain/helpers/params/get_pokemon_url
 class HomeState {
   final List<PokemonUrlEntity> listPokemonUrl;
   final List<PokemonDataEntity> listPokemonData;
-  final GetPokemonUrlParam endpointPokemons;
+  final GetPokemonUrlParam endpointPokemon;
   final bool updateList;
   HomeState({
     required this.listPokemonUrl,
     required this.listPokemonData,
-    required this.endpointPokemons,
+    required this.endpointPokemon,
     required this.updateList,
   });
 
   factory HomeState.init() => HomeState(
         listPokemonUrl: [],
         listPokemonData: [],
-        endpointPokemons: GetPokemonUrlParam(''),
+        endpointPokemon: GetPokemonUrlParam(''),
         updateList: false,
       );
 
   HomeState copyWith({
     List<PokemonUrlEntity>? listPokemonUrl,
     List<PokemonDataEntity>? listPokemonData,
-    GetPokemonUrlParam? endpointPokemons,
+    GetPokemonUrlParam? endpointPokemon,
     bool? updateList,
   }) {
     return HomeState(
       listPokemonUrl: listPokemonUrl ?? this.listPokemonUrl,
       listPokemonData: listPokemonData ?? this.listPokemonData,
-      endpointPokemons: endpointPokemons ?? this.endpointPokemons,
+      endpointPokemon: endpointPokemon ?? this.endpointPokemon,
       updateList: updateList ?? this.updateList,
     );
   }

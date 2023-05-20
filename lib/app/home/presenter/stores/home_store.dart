@@ -43,7 +43,7 @@ class HomeStore extends StreamStore<IAppException, HomeState> {
     setLoading(false);
   }
 
-  void setUpdatePokemons() {
+  void setUpdatePokemon() {
     update(state.copyWith(updateList: !state.updateList));
   }
 }

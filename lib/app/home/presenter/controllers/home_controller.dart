@@ -7,12 +7,10 @@ class HomeController {
 
   HomeController(this.homeStore);
 
-  List<PokemonDataEntity> get listPokemons => homeStore.state.listPokemonData;
+  List<PokemonDataEntity> get listPokemon => homeStore.state.listPokemonData;
 
-  Future<void> loadDataPokemons(GetPokemonUrlParam param) async {
+  Future<void> loadDataPokemon(GetPokemonUrlParam param) async {
     await homeStore.getPokemonUrl(param);
     await homeStore.getPokemonData();
   }
-
-  Future<void> loadMorePokemons(GetPokemonUrlParam param) async {}
 }

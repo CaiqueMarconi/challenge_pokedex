@@ -10,4 +10,8 @@ final pokemonDataEntityMock = PokemonDataEntity(
   specialAttack: 1,
   specialDefense: 1,
   speed: 1,
+  weight: 1,
+  height: 1,
+  abilities: [],
+  typePokemon: [],
 );

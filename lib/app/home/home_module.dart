@@ -3,6 +3,7 @@ import 'package:challenge_pokedex/app/home/external/datasources/get_pokemon_url_
 import 'package:challenge_pokedex/app/home/infra/repositories/get_pokemon_url_repository.dart';
 import 'package:challenge_pokedex/app/home/presenter/controllers/home_controller.dart';
 import 'package:challenge_pokedex/app/home/presenter/pages/home_page.dart';
+import 'package:challenge_pokedex/app/home/presenter/pages/page_preview_stats_pokemon.dart';
 import 'package:challenge_pokedex/app/home/presenter/stores/home_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -43,6 +44,10 @@ class HomeModule extends Module {
           child: (_, __) => HomePage(
             homeController: Modular.get<HomeController>(),
           ),
+        ),
+        ChildRoute(
+          '/preview_pokemon',
+          child: (_, __) => const PagePreviewStatsPokemon(),
         ),
       ];
 }
