@@ -1,5 +1,6 @@
-import 'package:challenge_pokedex/app/core/themes/colors/string_colors.dart';
 import 'package:flutter/material.dart';
+
+import '../../../core/themes/colors/string_colors.dart';
 
 class ColumnLoadingMorePokemon extends StatelessWidget {
   final String text;

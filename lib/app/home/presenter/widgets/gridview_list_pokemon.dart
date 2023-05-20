@@ -6,7 +6,7 @@ import '../../../core/themes/colors/string_colors.dart';
 import '../../domain/helpers/params/get_pokemon_url_param.dart';
 import '../controllers/home_controller.dart';
 import 'card_presentation_pokemon.dart';
-import 'column_loading_more_pokemons.dart';
+import 'column_loading_more_pokemon.dart';
 
 class GridviewListPokemon extends StatelessWidget {
   final HomeController homeController;
