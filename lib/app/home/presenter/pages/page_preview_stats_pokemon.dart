@@ -1,5 +1,4 @@
 import 'package:challenge_pokedex/app/core/themes/colors/string_colors.dart';
-import 'package:challenge_pokedex/app/home/domain/entities/pokemon_data_entity.dart';
 import 'package:challenge_pokedex/app/home/domain/helpers/enums/enum_type_pokemon.dart';
 import 'package:challenge_pokedex/app/home/presenter/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
