@@ -109,6 +109,25 @@ class _PagePreviewStatsPokemonState extends State<PagePreviewStatsPokemon> {
                                 Image.network(
                                   widget.homeController.listPokemon[index].img,
                                   scale: 1.8,
+                                  loadingBuilder:
+                                      (context, child, loadingProgress) {
+                                    if (loadingProgress == null) return child;
+                                    return SizedBox(
+                                      height: size.height * 0.37,
+                                      child: Center(
+                                        child: CircularProgressIndicator(
+                                          value: loadingProgress
+                                                      .expectedTotalBytes !=
+                                                  null
+                                              ? loadingProgress
+                                                      .cumulativeBytesLoaded /
+                                                  loadingProgress
+                                                      .expectedTotalBytes!
+                                              : null,
+                                        ),
+                                      ),
+                                    );
+                                  },
                                 ),
                                 RowTypesPokemon(
                                   pokemon:

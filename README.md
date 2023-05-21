@@ -1,16 +1,31 @@
 # challenge_pokedex
 
-A new Flutter project.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+# Detalhes do Desafio
 
-A few resources to get you started if this is your first Flutter project:
+# Controlador de Estado
+. TRIPLE
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Controle de rotas e injeções
+. MODULAR
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Arquitetura (Pattern)
+. CLEAN DART
+
+# TESTES
+. TDD e TRIPLE TESTS
+
+# SERVICES CRIADOS PARA DIMINUIÇÃO DE DEPENDENCIA
+. DIO
+
+# INSTRUÇÕES E INFORMAÇÕES
+
+o desafio foi realizado seguindo as regras passadas do mesmo consumindo a PokeApi e o figma disponibilizado,
+para execução do mesmo pode ser feito tanto o clone do repo e emulado pelo vsCode, quanto criar um apk, ou ate
+mesmo me pedir que eu envio o apk.
+obs. qualquer duvida estou a disposição https://www.linkedin.com/in/caique-marconi-b58790106/.
+
+# AGRADECIMENTOS
+
+desde ja agradeço a oportunidade e a confiança, foi um excelente desafio, coloco-me a disposição. DEUS ABENÇOE.
