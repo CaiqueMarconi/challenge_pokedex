@@ -7,6 +7,7 @@ import 'package:flutter_triple/flutter_triple.dart';
 
 import '../widgets/background_image_and_card.dart';
 import '../widgets/base_stats_pokemon.dart';
+import '../widgets/buttons_next_and_previous_page.dart';
 import '../widgets/row_data_about_pokemon.dart';
 import '../widgets/row_types_pokemon.dart';
 
@@ -155,51 +156,11 @@ class _PagePreviewStatsPokemonState extends State<PagePreviewStatsPokemon> {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: size.width * 0.060,
-                          ),
-                          child: SizedBox(
-                            height: size.height * 0.28,
-                            child: Align(
-                              alignment: Alignment.bottomCenter,
-                              child: Row(
-                                children: [
-                                  if (index != 0)
-                                    GestureDetector(
-                                      onTap: () {
-                                        _pageController.previousPage(
-                                          duration:
-                                              const Duration(milliseconds: 250),
-                                          curve: Curves.easeIn,
-                                        );
-                                      },
-                                      child: const Icon(
-                                        Icons.arrow_back_ios,
-                                        color: StringColors.white,
-                                      ),
-                                    ),
-                                  const Spacer(),
-                                  if (index !=
-                                      widget.homeController.listPokemon.length -
-                                          1)
-                                    GestureDetector(
-                                      onTap: () {
-                                        _pageController.nextPage(
-                                          duration:
-                                              const Duration(milliseconds: 250),
-                                          curve: Curves.easeIn,
-                                        );
-                                      },
-                                      child: const Icon(
-                                        Icons.arrow_forward_ios,
-                                        color: StringColors.white,
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
-                          ),
+                        ButtonsNextAndPreviousPokemon(
+                          pageController: _pageController,
+                          index: index,
+                          lenghtListPokemon:
+                              widget.homeController.listPokemon.length - 1,
                         )
                       ],
                     )),

@@ -17,7 +17,7 @@ class BaseStatsPokemon extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Expanded(
-      flex: 5,
+      flex: 6,
       child: Padding(
         padding: EdgeInsets.only(bottom: size.height * 0.020),
         child: SizedBox(
