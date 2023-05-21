@@ -88,6 +88,7 @@ class GridviewListPokemon extends StatelessWidget {
                       onTap: () async {
                         Modular.to.pushNamed('/preview_pokemon', arguments: {
                           'pokemon': pokemon,
+                          'indexSelected': index,
                         });
                       },
                       child: CardPresentationPokemon(pokemon: pokemon),
