@@ -8,7 +8,7 @@ enum EnumTypePokemon {
   water,
   bug,
   flying,
-  eletric,
+  electric,
   ghost,
   normal,
   psychic,
@@ -37,8 +37,8 @@ extension EnumTypePokemonExtension on EnumTypePokemon {
     if (typePokemon == EnumTypePokemon.flying.name) {
       return EnumTypePokemon.flying;
     }
-    if (typePokemon == EnumTypePokemon.eletric.name) {
-      return EnumTypePokemon.eletric;
+    if (typePokemon == EnumTypePokemon.electric.name) {
+      return EnumTypePokemon.electric;
     }
     if (typePokemon == EnumTypePokemon.ghost.name) {
       return EnumTypePokemon.ghost;
@@ -78,8 +78,8 @@ extension EnumTypePokemonExtension on EnumTypePokemon {
     if (typePokemon == EnumTypePokemon.flying) {
       return StringColors.purpleFlying;
     }
-    if (typePokemon == EnumTypePokemon.eletric) {
-      return StringColors.yellowEletric;
+    if (typePokemon == EnumTypePokemon.electric) {
+      return StringColors.yellowElectric;
     }
     if (typePokemon == EnumTypePokemon.ghost) {
       return StringColors.purpleGhost;

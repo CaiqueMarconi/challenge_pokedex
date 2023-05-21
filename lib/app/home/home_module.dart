@@ -47,7 +47,9 @@ class HomeModule extends Module {
         ),
         ChildRoute(
           '/preview_pokemon',
-          child: (_, __) => const PagePreviewStatsPokemon(),
+          child: (_, args) => PagePreviewStatsPokemon(
+            pokemon: args.data['pokemon'],
+          ),
         ),
       ];
 }

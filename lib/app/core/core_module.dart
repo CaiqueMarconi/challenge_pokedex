@@ -1,4 +1,4 @@
-import 'package:challenge_pokedex/app/core/shared/http/dio_http_service.dart';
+import 'package:challenge_pokedex/app/core/shared/services/http/dio_http_service.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 

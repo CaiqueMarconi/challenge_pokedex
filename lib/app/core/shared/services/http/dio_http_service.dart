@@ -35,22 +35,4 @@ class DioHttpService implements IHttpService {
         return ResponseType.bytes;
     }
   }
-
-  // @override
-  // Future<PostHttpServiceResponse<T>> post<T>(PostHttpServiceParam param) async {
-  //   final dioResponse = await _dio.post<T>(
-  //     param.url,
-  //     data: param.data,
-  //     queryParameters: param.params,
-  //     options: Options(
-  //       responseType: _handleResponseType(param.responseType),
-  //       headers: param.headers,
-  //       contentType: param.contentType,
-  //     ),
-  //   );
-
-  //   final response = PostHttpServiceResponse(data: dioResponse.data);
-  //   return response;
-  // }
-
 }

@@ -3,6 +3,7 @@ import 'package:challenge_pokedex/app/core/themes/images/string_images.dart';
 import 'package:challenge_pokedex/app/home/domain/helpers/params/get_pokemon_url_param.dart';
 import 'package:challenge_pokedex/app/home/presenter/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../domain/helpers/string_endpoint.dart';
 import '../widgets/gridview_list_pokemon.dart';
@@ -46,9 +47,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Row(
                   children: [
-                    Image.asset(
+                    SvgPicture.asset(
                       StringImages.pokeball,
-                      scale: 2,
+                      height: size.width * 0.07,
                     ),
                     SizedBox(width: size.width * 0.030),
                     Text(

@@ -11,7 +11,7 @@ class StringColors {
   static const blueWater = Color(0xff6493EB);
   static const greenBug = Color(0xffA7B723);
   static const purpleFlying = Color(0xffA891EC);
-  static const yellowEletric = Color(0xffF9CF30);
+  static const yellowElectric = Color(0xffF9CF30);
   static const purpleGhost = Color(0xff70559B);
   static const colorNormal = Color(0xffAAA67F);
   static const pinkPsychic = Color(0xffFB5584);

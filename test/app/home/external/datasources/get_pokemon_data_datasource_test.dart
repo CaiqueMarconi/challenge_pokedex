@@ -1,6 +1,6 @@
-import 'package:challenge_pokedex/app/core/shared/http/helpers/params.dart';
-import 'package:challenge_pokedex/app/core/shared/http/helpers/responses.dart';
-import 'package:challenge_pokedex/app/core/shared/http/i_http_service.dart';
+import 'package:challenge_pokedex/app/core/shared/services/http/helpers/params.dart';
+import 'package:challenge_pokedex/app/core/shared/services/http/helpers/responses.dart';
+import 'package:challenge_pokedex/app/core/shared/services/http/i_http_service.dart';
 import 'package:challenge_pokedex/app/home/domain/entities/pokemon_data_entity.dart';
 import 'package:challenge_pokedex/app/home/domain/entities/pokemon_url_entity.dart';
 import 'package:challenge_pokedex/app/home/external/datasources/get_pokemon_data_datasource.dart';
