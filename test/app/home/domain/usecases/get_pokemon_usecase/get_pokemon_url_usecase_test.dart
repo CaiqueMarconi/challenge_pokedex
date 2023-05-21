@@ -11,10 +11,12 @@ class RepositoryMock extends Mock implements IGetPokemonUrlRepository {}
 void main() {
   final repository = RepositoryMock();
   final usecase = GetPokemonUrlUsecase(repository);
+
+  final mock = GetPokemonUrlParam('');
   test('get pokemon url usecase ...', () async {
-    when(() => repository.call(GetPokemonUrlParam('')))
+    when(() => repository.call(mock))
         .thenAnswer((invocation) async => const Right([]));
-    final result = await usecase.call(GetPokemonUrlParam(''));
+    final result = await usecase.call(mock);
     expect(result.fold((l) => l, (r) => r), isA<List<PokemonUrlEntity>>());
   });
 }

@@ -17,7 +17,6 @@ class HomeStore extends StreamStore<IAppException, HomeState> {
         super(HomeState.init());
 
   Future<void> getPokemonUrl(GetPokemonUrlParam param) async {
-    setLoading(true);
     final result = await _getPokemonUrlUsecase.call(param);
     result.fold(
       (l) => setError(l),
@@ -25,11 +24,9 @@ class HomeStore extends StreamStore<IAppException, HomeState> {
         state.copyWith(listPokemonUrl: r),
       ),
     );
-    setLoading(false);
   }
 
   Future<void> getPokemonData() async {
-    setLoading(true);
     final result = await _getPokemonDataUsecase.call(state.listPokemonUrl);
     result.fold((l) => setError(l), (r) {
       state.listPokemonData.addAll(r);
@@ -40,7 +37,6 @@ class HomeStore extends StreamStore<IAppException, HomeState> {
         ),
       );
     });
-    setLoading(false);
   }
 
   void setUpdatePokemon() {

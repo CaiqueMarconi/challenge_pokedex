@@ -12,18 +12,19 @@ class MockDatasource extends Mock implements IGetPokemonUrlDatasource {}
 void main() {
   final datasource = MockDatasource();
   final repository = GetPokemonUrlRepository(datasource);
+
+  final mock = GetPokemonUrlParam('');
   test('get pokemon url repository ...', () async {
-    when(() => datasource.call(GetPokemonUrlParam('')))
-        .thenAnswer((invocation) async => []);
-    final result = await repository.call(GetPokemonUrlParam(''));
+    when(() => datasource.call(mock)).thenAnswer((invocation) async => []);
+    final result = await repository.call(mock);
     expect(result.fold((l) => l, (r) => r), isA<List<PokemonUrlEntity>>());
   });
 
   test('get pokemon url repository failure...', () async {
-    when(() => datasource.call(GetPokemonUrlParam(''))).thenThrow(
+    when(() => datasource.call(mock)).thenThrow(
       AppException(message: 'message', stackTrace: StackTrace.empty),
     );
-    final result = await repository.call(GetPokemonUrlParam(''));
+    final result = await repository.call(mock);
     expect(result.fold((l) => l, (r) => r), isA<IAppException>());
   });
 }
