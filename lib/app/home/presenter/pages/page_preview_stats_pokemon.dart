@@ -12,12 +12,10 @@ import '../widgets/row_data_about_pokemon.dart';
 import '../widgets/row_types_pokemon.dart';
 
 class PagePreviewStatsPokemon extends StatefulWidget {
-  final PokemonDataEntity pokemon;
   final HomeController homeController;
   final int indexSelected;
   const PagePreviewStatsPokemon({
     super.key,
-    required this.pokemon,
     required this.homeController,
     required this.indexSelected,
   });
@@ -42,6 +40,7 @@ class _PagePreviewStatsPokemonState extends State<PagePreviewStatsPokemon> {
       store: widget.homeController.homeStore,
       onState: ((context, state) {
         return PageView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           controller: _pageController,
           itemCount: widget.homeController.listPokemon.length,
           itemBuilder: ((context, index) {

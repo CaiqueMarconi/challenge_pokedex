@@ -48,7 +48,6 @@ class HomeModule extends Module {
         ChildRoute(
           '/preview_pokemon',
           child: (_, args) => PagePreviewStatsPokemon(
-            pokemon: args.data['pokemon'],
             homeController: Modular.get<HomeController>(),
             indexSelected: args.data['indexSelected'],
           ),

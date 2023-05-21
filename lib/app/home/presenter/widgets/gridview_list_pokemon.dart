@@ -87,7 +87,6 @@ class GridviewListPokemon extends StatelessWidget {
                     return GestureDetector(
                       onTap: () async {
                         Modular.to.pushNamed('/preview_pokemon', arguments: {
-                          'pokemon': pokemon,
                           'indexSelected': index,
                         });
                       },
