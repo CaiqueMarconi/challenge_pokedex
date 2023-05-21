@@ -7,6 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../widgets/column_about_stats_pokemon.dart';
+import '../widgets/divider_stats.dart';
+import '../widgets/status_bar_custom_stats_pokemon.dart';
+import '../widgets/text_stats_info.dart';
+import '../widgets/text_value_stats_pokemon.dart';
+
 class PagePreviewStatsPokemon extends StatelessWidget {
   final PokemonDataEntity pokemon;
   const PagePreviewStatsPokemon({
@@ -185,7 +191,7 @@ class PagePreviewStatsPokemon extends StatelessWidget {
                               title: 'Weight',
                             ),
                             SizedBox(width: size.width * 0.050),
-                            DividerStats(),
+                            const DividerStats(),
                             SizedBox(width: size.width * 0.050),
                             ColumnAboutStatsPokemon(
                               value:
@@ -194,7 +200,7 @@ class PagePreviewStatsPokemon extends StatelessWidget {
                               title: 'Height',
                             ),
                             SizedBox(width: size.width * 0.050),
-                            DividerStats(),
+                            const DividerStats(),
                             SizedBox(width: size.width * 0.050),
                             Column(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -359,163 +365,6 @@ class PagePreviewStatsPokemon extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class StatusBarCustomStatsPokemon extends StatelessWidget {
-  final PokemonDataEntity pokemon;
-  final int valueStats;
-  const StatusBarCustomStatsPokemon({
-    Key? key,
-    required this.pokemon,
-    required this.valueStats,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        Container(
-          height: size.height * 0.008,
-          decoration: BoxDecoration(
-            color: EnumTypePokemonExtension.colorThemePokemonType(
-              pokemon.typePokemon[0].typePokemon,
-            ).withOpacity(0.3),
-            borderRadius: BorderRadius.circular(
-              size.width * 0.1,
-            ),
-          ),
-        ),
-        Container(
-          height: size.height * 0.008,
-          width: valueStats.toDouble(),
-          decoration: BoxDecoration(
-            color: EnumTypePokemonExtension.colorThemePokemonType(
-              pokemon.typePokemon[0].typePokemon,
-            ),
-            borderRadius: BorderRadius.circular(
-              size.width * 0.1,
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class TextValueStatsPokemon extends StatelessWidget {
-  final String value;
-  const TextValueStatsPokemon({
-    Key? key,
-    required this.value,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Text(
-      value.toString().padLeft(3, '0'),
-      style: TextStyle(
-        fontSize: size.width * 0.040,
-        fontWeight: FontWeight.w400,
-      ),
-    );
-  }
-}
-
-class DividerStats extends StatelessWidget {
-  const DividerStats({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: double.maxFinite,
-      width: 2,
-      color: StringColors.greyLight,
-    );
-  }
-}
-
-class TextStatsInfo extends StatelessWidget {
-  final String title;
-  final PokemonDataEntity pokemon;
-  const TextStatsInfo({
-    Key? key,
-    required this.title,
-    required this.pokemon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Text(
-      title.toUpperCase(),
-      style: TextStyle(
-        color: EnumTypePokemonExtension.colorThemePokemonType(
-          pokemon.typePokemon[0].typePokemon,
-        ),
-        fontSize: size.width * 0.040,
-        fontWeight: FontWeight.w700,
-      ),
-    );
-  }
-}
-
-class ColumnAboutStatsPokemon extends StatelessWidget {
-  final String value;
-  final String title;
-  final String icon;
-  const ColumnAboutStatsPokemon({
-    Key? key,
-    required this.value,
-    required this.title,
-    required this.icon,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Expanded(
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              SvgPicture.asset(
-                icon,
-                height: size.width * 0.050,
-              ),
-              SizedBox(width: size.width * 0.030),
-              Text(
-                value,
-                style: TextStyle(
-                  fontSize: size.width * 0.040,
-                  fontWeight: FontWeight.w400,
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: size.height * 0.020),
-        Expanded(
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(
-              title,
-              style: TextStyle(
-                color: StringColors.greySteel,
-                fontSize: size.width * 0.040,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

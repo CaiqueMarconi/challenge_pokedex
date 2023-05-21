@@ -33,12 +33,8 @@ class RowSearchAndButtonOrderer extends StatelessWidget {
               ],
             ),
             child: TextFormField(
-              textAlignVertical: TextAlignVertical.top,
               decoration: InputDecoration(
                 hintText: 'Search',
-                hintStyle: TextStyle(
-                  fontSize: size.width * 0.036,
-                ),
                 prefixIcon: Icon(
                   Icons.search,
                   color: StringColors.red,

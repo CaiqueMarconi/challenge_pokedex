@@ -85,10 +85,11 @@ class GridviewListPokemon extends StatelessWidget {
                   } else {
                     // card que mostra todos os pokemon carregados da api
                     return GestureDetector(
-                      onTap: () =>
-                          Modular.to.pushNamed('/preview_pokemon', arguments: {
-                        'pokemon': pokemon,
-                      }),
+                      onTap: () async {
+                        Modular.to.pushNamed('/preview_pokemon', arguments: {
+                          'pokemon': pokemon,
+                        });
+                      },
                       child: CardPresentationPokemon(pokemon: pokemon),
                     );
                   }
