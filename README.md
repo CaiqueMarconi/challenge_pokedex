@@ -1,6 +1,12 @@
 # challenge_pokedex
 
+image.png
 
+image.png
+
+image.png
+
+image.png
 
 # Detalhes do Desafio
 
